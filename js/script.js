@@ -15,14 +15,14 @@ body.prepend(sectionMain);
 
 //Добавляем контейнер
 //Создание
-const container = document.createElement('div');
+const containerMain = document.createElement('div');
 //Добавление стилей
-container.style.cssText = `
+containerMain.style.cssText = `
     max-width: 1141px;
     margin: 0 auto;
     `;
 //Вставка
-sectionMain.prepend(container);
+sectionMain.prepend(containerMain);
 
 
 //Добавляем HEADER
@@ -36,7 +36,7 @@ header.style.cssText = `
     margin-bottom: 80px;
 `;
 //Вставка
-container.prepend(header);
+containerMain.prepend(header);
 
 //Добавляем Header Inner
 //Создание
@@ -56,7 +56,7 @@ header.prepend(headerInner);
 const logo = document.createElement('a');
 //Наполнение
 logo.href = "#";
-logo.innerHTML = `<img src="img/Logo.svg" alt="LOGO">`;
+logo.innerHTML = `<img src="img/Main/Logo.svg" alt="LOGO">`;
 //Добавление стилей
 //Вставка
 headerInner.prepend(logo);
@@ -235,9 +235,9 @@ const googlePlayButton = document.createElement('a');
 const appStoreButton = document.createElement('a');
 //Наполнение
 googlePlayButton.href = '#';
-googlePlayButton.innerHTML = `<img src='img/google_play.svg' alt='Google Play Download Button'>`;
+googlePlayButton.innerHTML = `<img src='img/Main/google_play.svg' alt='Google Play Download Button'>`;
 appStoreButton.href = '#';
-appStoreButton.innerHTML = `<img src='img/appstore.svg' alt='App Store Download Button'>`;
+appStoreButton.innerHTML = `<img src='img/Main/appstore.svg' alt='App Store Download Button'>`;
 //Добавление стилей
 //Вставка
 buttonsInner.prepend(googlePlayButton);
@@ -258,7 +258,7 @@ textContentInner.after(imagesInner);
 //Создание
 const bottomLeftArc = document.createElement('img');
 // Наполнение
-bottomLeftArc.src = 'img/ellipse_bottomleft.svg';
+bottomLeftArc.src = 'img/Main/ellipse_bottomleft.svg';
 //Добавление стилей
 bottomLeftArc.style.cssText = `
     position: absolute;
@@ -274,7 +274,7 @@ imagesInner.prepend(bottomLeftArc);
 //Создание
 const centralImage = document.createElement('img');
 //Наполнение
-centralImage.src = 'img/appimage.png';
+centralImage.src = 'img/Main/appimage.png';
 //Добавление стилей
 //Вставка
 bottomLeftArc.after(centralImage);
@@ -283,7 +283,7 @@ bottomLeftArc.after(centralImage);
 //Создание
 const topRightArc = document.createElement('img');
 // Наполнение
-topRightArc.src = 'img/ellipse_topright.svg';
+topRightArc.src = 'img/Main/ellipse_topright.svg';
 //Добавление стилей
 topRightArc.style.cssText = `
     position: absolute;
@@ -293,8 +293,86 @@ topRightArc.style.cssText = `
 //Вставка
 centralImage.after(topRightArc);
 
+//===========================================================================
+//===========================================================================
+//===========================================================================
+//===========================================================================
 
-//Добавляем Header Inner
+//Добавляем Section Companies 
+//Создание
+const sectionCompanies = document.createElement('section');
+//Добавление стилей
+sectionCompanies.style.cssText = `
+    padding: 63px 0 44px;
+`;
+//Вставка
+sectionMain.after(sectionCompanies);
+
+
+//Добавляем Container for Section Companies 
+//Создание
+const companiesContainer = document.createElement('div');
+//Добавление стилей
+companiesContainer.style.cssText = `
+    max-width: 1137px;
+    margin: 0 auto;
+`;
+//Вставка
+sectionCompanies.prepend(companiesContainer);
+
+
+//Добавляем Companies Text
+//Создание
+const companiesText = document.createElement('p');
+//Наполнение
+companiesText.textContent = '100+ Companies Use our App';
+//Добавление стилей
+companiesText.style.cssText = `
+    font-family: Lato;
+    font-weight: 500;
+    font-size: 21.4632px;
+    line-height: 26px;
+    color: #03101A;
+    margin-bottom: 45px;
+`;
+//Вставка
+companiesContainer.prepend(companiesText);
+
+//Добавляем Companies Inner
+//Создание
+const companiesInner = document.createElement('div');
+//Добавление стилей
+companiesInner.style.cssText = `
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+`;
+//Вставка
+companiesText.after(companiesInner);
+
+//Добавляем Companies Images 
+//Создание
+const companiesImagesPathList = [
+    {companyImagePath: 'img/Companies/waves_below.svg'},
+    {companyImagePath: 'img/Companies/dots_in_lines.svg'},
+    {companyImagePath: 'img/Companies/waves_in_circle.svg'},
+    {companyImagePath: 'img/Companies/two_semicircles.svg'}
+];
+
+const companiesHTML = companiesImagesPathList.map( path => {
+    const companyImage = document.createElement('img');
+    companyImage.src = path.companyImagePath;
+    return companyImage;
+});
+//Добавление стилей
+
+//Вставка
+companiesInner.prepend(...companiesHTML);
+
+
+
+
+//Добавляем Section Companies 
 //Создание
 //Добавление стилей
 //Вставка
