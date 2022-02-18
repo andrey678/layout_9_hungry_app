@@ -1,0 +1,33 @@
+<svg width="530" height="400" viewBox="0 0 530 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g opacity="0.3">
+<mask id="mask0_0_41" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="531" height="400">
+<line x1="200.158" y1="0.22839" x2="0.445116" y2="390.356" stroke="black"/>
+<line x1="214.502" y1="7.57025" x2="14.7883" y2="397.698" stroke="black"/>
+<line x1="228.844" y1="14.9128" x2="29.1311" y2="405.04" stroke="black"/>
+<line x1="243.187" y1="22.2551" x2="43.4741" y2="412.382" stroke="black"/>
+<line x1="257.53" y1="29.5974" x2="57.8169" y2="419.725" stroke="black"/>
+<line x1="271.873" y1="36.94" x2="72.16" y2="427.067" stroke="black"/>
+<line x1="286.216" y1="44.2823" x2="86.5028" y2="434.41" stroke="black"/>
+<line x1="300.559" y1="51.6248" x2="100.846" y2="441.752" stroke="black"/>
+<line x1="314.902" y1="58.9672" x2="115.189" y2="449.094" stroke="black"/>
+<line x1="329.245" y1="66.3095" x2="129.532" y2="456.437" stroke="black"/>
+<line x1="343.588" y1="73.652" x2="143.875" y2="463.779" stroke="black"/>
+<line x1="357.931" y1="80.9943" x2="158.217" y2="471.122" stroke="black"/>
+<line x1="372.274" y1="88.3367" x2="172.56" y2="478.464" stroke="black"/>
+<line x1="386.617" y1="95.6792" x2="186.903" y2="485.807" stroke="black"/>
+<line x1="400.96" y1="103.022" x2="201.246" y2="493.149" stroke="black"/>
+<line x1="415.302" y1="110.364" x2="215.589" y2="500.491" stroke="black"/>
+<line x1="429.645" y1="117.706" x2="229.932" y2="507.834" stroke="black"/>
+<line x1="443.988" y1="125.049" x2="244.275" y2="515.176" stroke="black"/>
+<line x1="458.331" y1="132.391" x2="258.618" y2="522.518" stroke="black"/>
+<line x1="472.674" y1="139.734" x2="272.961" y2="529.861" stroke="black"/>
+<line x1="487.017" y1="147.076" x2="287.304" y2="537.203" stroke="black"/>
+<line x1="501.36" y1="154.418" x2="301.646" y2="544.546" stroke="black"/>
+<line x1="515.703" y1="161.761" x2="315.989" y2="551.888" stroke="black"/>
+<line x1="530.046" y1="169.103" x2="330.332" y2="559.23" stroke="black"/>
+</mask>
+<g mask="url(#mask0_0_41)">
+<circle cx="264.801" cy="279.501" r="109.569" transform="rotate(27.1087 264.801 279.501)" fill="#1F98F0"/>
+</g>
+</g>
+</svg>

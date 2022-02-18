@@ -353,13 +353,13 @@ companiesText.after(companiesInner);
 //Добавляем Companies Images 
 //Создание
 const companiesImagesPathList = [
-    {companyImagePath: 'img/Companies/waves_below.svg'},
-    {companyImagePath: 'img/Companies/dots_in_lines.svg'},
-    {companyImagePath: 'img/Companies/waves_in_circle.svg'},
-    {companyImagePath: 'img/Companies/two_semicircles.svg'}
+    { companyImagePath: 'img/Companies/waves_below.svg' },
+    { companyImagePath: 'img/Companies/dots_in_lines.svg' },
+    { companyImagePath: 'img/Companies/waves_in_circle.svg' },
+    { companyImagePath: 'img/Companies/two_semicircles.svg' }
 ];
 
-const companiesHTML = companiesImagesPathList.map( path => {
+const companiesHTML = companiesImagesPathList.map(path => {
     const companyImage = document.createElement('img');
     companyImage.src = path.companyImagePath;
     return companyImage;
@@ -369,10 +369,254 @@ const companiesHTML = companiesImagesPathList.map( path => {
 //Вставка
 companiesInner.prepend(...companiesHTML);
 
+//==========================================================================
+//==========================================================================
+//==========================================================================
+//==========================================================================
+
+
+//Добавляем Section Features 
+//Создание
+const sectionFeatures = document.createElement('section');
+//Добавление стилей
+sectionFeatures.style.cssText = `
+    padding: 92px 0 10px;
+`;
+//Вставка
+sectionCompanies.after(sectionFeatures);
 
 
 
-//Добавляем Section Companies 
+// Добавляем Features Container
+//Создание
+const featuresContainer = document.createElement('div');
+//Добавление стилей
+featuresContainer.style.cssText = `
+    max-width: 1200px;
+    margin: 0 auto;
+`;
+//Вставка
+sectionFeatures.insertAdjacentElement('afterbegin', featuresContainer);
+
+
+//Добавляем Features Content Inner
+//Создание
+const featuresContentInner = document.createElement('div');
+//Добавление стилей
+featuresContentInner.style.cssText = `
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+`;
+//Вставка
+featuresContainer.insertAdjacentElement('afterbegin', featuresContentInner);
+
+
+
+// Добавляем Features Pictures Inner 
+//Создание
+const featuresPicturesInner = document.createElement('div');
+//Добавление стилей
+featuresPicturesInner.style.cssText = `
+    position: relative;
+`;
+//Вставка
+featuresContentInner.insertAdjacentElement('afterbegin', featuresPicturesInner);
+
+
+
+//Добавляем Features Top Left Stripes
+//Создание
+const featuresTopLeftStripes = document.createElement('img');
+//Наполнение
+featuresTopLeftStripes.src = 'img/Features/top_left_stripes.svg';
+//Добавление стилей
+featuresTopLeftStripes.style.cssText = `
+    position: absolute;
+    left: -140px;
+    top:-75px;
+    
+`;
+//Вставка
+featuresPicturesInner.prepend(featuresTopLeftStripes);
+
+//Добавляем Features Front Side of app
+//Создание
+const featuresAppFrontSide = document.createElement('img');
+//Наполнение
+featuresAppFrontSide.src = 'img/Features/front_side_of_app.svg';
+//Добавление стилей
+featuresAppFrontSide.style.cssText = `
+    position:relative;
+    z-index: 1;
+`;
+//Вставка
+featuresTopLeftStripes.after(featuresAppFrontSide);
+
+//Добавляем Features Bottom stripes
+//Создание
+const featuresBottomStripes = document.createElement('img');
+//Наполнение
+featuresBottomStripes.src = 'img/Features/bottom_stripes.svg';
+//Добавление стилей
+featuresBottomStripes.style.cssText = `
+    position: absolute;
+    bottom: -100px;
+    left: -132px;
+`;
+//Вставка
+featuresAppFrontSide.after(featuresBottomStripes);
+
+//Добавляем Features Image Blink
+//Создание
+const featuresImageBlink = document.createElement('img');
+//Наполнение
+featuresImageBlink.src = 'img/Features/blink.svg';
+//Добавление стилей
+featuresImageBlink.style.cssText = `
+    position: absolute;
+    z-index: 2;
+    top: 54%;
+    right: -6%;
+`;
+//Вставка
+featuresBottomStripes.after(featuresImageBlink);
+// Добавляем Features Text Content Inner
+//Создание
+const featuresTextContentInner = document.createElement('div');
+//Добавление стилей
+featuresTextContentInner.style.maxWidth = '569px';
+//Вставка
+featuresPicturesInner.after(featuresTextContentInner);
+
+
+// Добавляем Features Heading
+//Создание
+const featuresHeading = document.createElement('h2');
+//Наполнение
+featuresHeading.textContent = 'Main Features';
+//Добавление стилей
+featuresHeading.style.cssText = `
+    font-family: Lato;
+    font-weight: bold;
+    font-size: 38px;
+    line-height: 46px;
+    color: #03101A;
+    margin-bottom: 84px;
+`;
+//Вставка
+featuresTextContentInner.append(featuresHeading);
+
+
+// Добавляем Features Items
+//Создание
+const featuresItems = document.createElement('div');
+//Добавление стилей
+//Вставка
+featuresHeading.after(featuresItems);
+
+//Добавляем  Features List
+const featuresList = {
+    "quick delivery": {
+        image: 'img/Features/quick_delivery.svg',
+        heading: 'Quick Delivery',
+        text: 'Food Delivery is a thriving business and there are many opportunities for this Businesses as its Growing.'
+    },
+    "fast payment": {
+        image: 'img/Features/fast_payment.svg',
+        heading: 'Fast Payment',
+        text: 'Food Delivery is a thriving business and there are many opportunities for this Businesses as its Growing.'
+    },
+    "get reviews": {
+        image: 'img/Features/get_reviews.svg',
+        heading: 'Get Reviews',
+        text: 'Food Delivery is a thriving business and there are many opportunities for this Businesses as its Growing.'
+    }
+};
+//Разбираем объект в Features Item 
+for (let feature in featuresList) {
+    //Создание
+    const featuresItem = document.createElement('div');
+    //Добавление стилей
+    featuresItem.style.cssText = `
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 51px;
+    `;
+    //Вставка
+    featuresItems.append(featuresItem);
+
+    //Добавляем  Features Image
+    //Создание
+    const featuresImage = document.createElement('img');
+    //Наполнение из объекта featuresList
+    featuresImage.src = featuresList[feature].image;
+    //Добавление стилей
+    featuresImage.style.marginRight = '30px';
+    //Вставка
+    featuresItem.append(featuresImage);
+
+    //Добавляем  Features Item Text
+    //Создание
+    const featuresItemText = document.createElement('div');
+    //Добавление стилей
+    featuresItemText.style.maxWidth = '446px';
+    //Вставка
+    featuresItem.append(featuresItemText);
+
+    //Добавляем Features Item Heading
+    //Создание
+    const featuresItemHeading = document.createElement('h3');
+    //Наполнение из объекта featuresList
+    featuresItemHeading.textContent = featuresList[feature].heading;
+    //Добавление стилей
+    featuresItemHeading.style.cssText = `
+        font-family: Lato;
+        font-weight: 500;
+        font-size: 21px;
+        line-height: 25px;
+        color: #03101A;
+        margin-bottom: 20px;
+    `;
+    //Вставка
+    featuresItemText.append(featuresItemHeading);
+
+    //Добавляем  Features Item Definition
+    //Создание
+    const featuresItemDefinition = document.createElement('p');
+    //Наполнение из объекта featuresList
+    featuresItemDefinition.textContent = featuresList[feature].text;
+    //Добавление стилей
+    featuresItemDefinition.style.cssText = `
+        font-family: Lato;
+        font-size: 16px;
+        line-height: 150%;
+        color: #03101A;
+        opacity: 0.7;
+    `;
+    //Вставка
+    featuresItemText.append(featuresItemDefinition);
+
+}
+
+
+
+
+
+
+// Добавляем Features List Item
+//Создание
+const featuresListItem = document.createElement('div');
+//Добавление стилей
+featuresListItem.style.cssText = `
+    display: flex;
+    justify-content: space-between;
+`;
+//Вставка
+
+
+
+// Добавляем Features Container
 //Создание
 //Добавление стилей
 //Вставка
