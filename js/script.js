@@ -5,6 +5,8 @@ console.log(body);
 //Создаём первую секцию main
 //Создание
 const sectionMain = document.createElement('section');
+//Наполнение
+sectionMain.id = 'Home';
 //Добавление стилей
 sectionMain.style.backgroundColor = "#1F98F0";
 sectionMain.style.paddingTop = "35px";
@@ -301,6 +303,7 @@ centralImage.after(topRightArc);
 //Добавляем Section Companies 
 //Создание
 const sectionCompanies = document.createElement('section');
+
 //Добавление стилей
 sectionCompanies.style.cssText = `
     padding: 63px 0 44px;
@@ -378,6 +381,8 @@ companiesInner.prepend(...companiesHTML);
 //Добавляем Section Features 
 //Создание
 const sectionFeatures = document.createElement('section');
+//Наполнение
+sectionFeatures.id = 'Feature'; 
 //Добавление стилей
 sectionFeatures.style.cssText = `
     padding: 92px 0 10px;
@@ -610,6 +615,8 @@ for (let feature in featuresList) {
 // Добавляем Testimonials Section
 //Создание
 const sectionTestimonials = document.createElement('section');
+//Наполнение
+sectionTestimonials.id = 'Testimonial';
 //Добавление стилей
 sectionTestimonials.style.cssText = `
     padding: 85px 0 79px;
@@ -659,7 +666,7 @@ const testimonialsContentInner = document.createElement('div');
 testimonialsContentInner.style.cssText = `
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    flex-wrap: wrap;
 `;
 //Вставка
 testimonialsHeading.after(testimonialsContentInner);
@@ -694,7 +701,11 @@ for (let item in testimonialsList) {
     //Создание
     const testimonialsItem = document.createElement('div');
     //Добавление стилей
-    testimonialsItem.style.maxWidth = '260px';
+    testimonialsItem.style.cssText = `
+        max-width: 260px;
+        margin-bottom: 80px;
+    `;
+
     //Вставка
     testimonialsContentInner.append(testimonialsItem);
 
@@ -818,3 +829,169 @@ offerButton.style.cssText = `
 `;
 //Вставка
 offerHeading.after(offerButton);
+
+
+//=========================================================================
+//=========================================================================
+//=========================================================================
+//=========================================================================
+
+// Добавляем News Section
+//Создание
+const sectionNews = document.createElement('section');
+//Наполнение
+sectionNews.id = 'Blog'; 
+//Добавление стилей
+sectionNews.style.cssText = `
+    padding: 120px 0 128px;
+`;
+//Вставка
+sectionOffer.after(sectionNews);
+
+//Добавляем News Container
+//Создание
+const newsContainer = document.createElement('div');
+//Добавление стилей
+newsContainer.style.cssText = `
+    max-width: 1140px;
+    margin: 0 auto;
+`;
+//Вставка
+sectionNews.prepend(newsContainer);
+
+// Добавляем News Heading
+//Создание
+const newsHeading = document.createElement('h2');
+//Наполнение
+newsHeading.textContent = 'Update News';
+//Добавление стилей
+newsHeading.style.cssText = `
+    font-family: Lato;
+    font-weight: bold;
+    font-size: 38px;
+    line-height: 46px;
+    text-align: center;
+    color: #03101A;
+    margin-bottom: 60px;
+`;
+//Вставка
+newsContainer.prepend(newsHeading);
+
+// Добавляем News Items Inner
+// Создание
+const newsItemsInner = document.createElement('div');
+//Добавление стилей
+newsItemsInner.style.cssText = `
+    max-width: 1140px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+`;
+//Вставка
+newsHeading.after(newsItemsInner);
+
+// Добавляем News Source List
+// Создание
+const newsSourceList = {
+    'first piece of news': {
+        image: 'img/News/flowers.jpg',
+        heading: 'Healthy Food',
+        description: 'Food Delivery is a thriving business and there are many opportunities for this Businesses as its Growing.'
+    },
+    'second piece of news': {
+        image: 'img/News/roof.jpg',
+        heading: 'Healthy Food',
+        description: 'Food Delivery is a thriving business and there are many opportunities for this Businesses as its Growing.'
+    },
+    'third piece of news': {
+        image: 'img/News/yellow_brick_wall.jpg',
+        heading: 'Healthy Food',
+        description: 'Food Delivery is a thriving business and there are many opportunities for this Businesses as its Growing.'
+    }
+}
+
+//Разбираем объект
+for (let item in newsSourceList){
+    //Добавляем News Item
+    //Создание 
+    const newsItem = document.createElement('div');
+    //Добавляение стилей
+    newsItem.style.cssText = `
+        max-width: 360px;
+        margin-bottom: 30px;
+    `;
+    //Вставка
+    newsItemsInner.append(newsItem);
+
+    //Добавляем News Item Image
+    //Создание 
+    const newsItemImage = document.createElement('img');
+    //Наполнение
+    newsItemImage.src = newsSourceList[item].image;
+    //Добавляение стилей
+    newsItemImage.style.marginBottom = '25px';
+    //Вставка
+    newsItem.append(newsItemImage);
+
+    //Добавляем News Item Heading
+    //Создание 
+    const newsItemHeading = document.createElement('h3');
+    //Наполнение
+    newsItemHeading.textContent = newsSourceList[item].heading;
+    //Добавляение стилей
+    newsItemHeading.style.cssText = `
+        font-family: Lato;
+        font-weight: 600;
+        font-size: 28px;
+        line-height: 34px;
+        color: #03101A;
+        margin-bottom: 15px;
+    `;
+    //Вставка
+    newsItemImage.after(newsItemHeading);
+
+    //Добавляем News Item Description
+    //Создание 
+    const newsItemDescription = document.createElement('p');
+    //Наполнение
+    newsItemDescription.textContent = newsSourceList[item].description;
+    //Добавляение стилей
+    newsItemDescription.style.cssText = `
+        font-family: Lato;
+        font-size: 16px;
+        line-height: 150%;
+        color: #6D7073;
+        opacity: 0.7;
+        margin-bottom: 30px;
+    `;
+    //Вставка
+    newsItemHeading.after(newsItemDescription);
+
+    //Добавляем News Item Link
+    //Создание 
+    const newsItemLink = document.createElement('a');
+    // Наполнение
+    newsItemLink.href = '#';
+    newsItemLink.textContent = 'Read More';
+    //Добавляение стилей
+    newsItemLink.style.cssText = `
+        font-family: Lato;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 150%;
+        color: #1F98F0;
+        
+    `;
+    //Вставка
+    newsItemDescription.after(newsItemLink);
+}
+//===========================================================================
+//===========================================================================
+//===========================================================================
+//===========================================================================
+
+
+//Добавляем News Item
+    //Создание 
+    //Добавляение стилей
+    //Вставка
