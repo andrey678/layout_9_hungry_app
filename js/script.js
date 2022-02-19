@@ -599,7 +599,10 @@ for (let feature in featuresList) {
 
 }
 
-
+//==========================================================================
+//==========================================================================
+//==========================================================================
+//==========================================================================
 
 
 
@@ -744,10 +747,74 @@ for (let item in testimonialsList) {
     //Вставка
     testimonialsItemHeading.after(testimonialsItemText);
 }
+//=========================================================================
+//=========================================================================
+//=========================================================================
+//=========================================================================
 
 
-
-// Добавляем Testimonials Item
+// Добавляем Section Offer
 //Создание
+const sectionOffer = document.createElement('section');
 //Добавление стилей
+sectionOffer.style.cssText = `
+    padding: 107px 0 96px;
+    background: #1F98F0;
+`;
 //Вставка
+sectionTestimonials.after(sectionOffer);
+
+// Добавляем Offer Container
+//Создание
+const offerContainer = document.createElement('div');
+//Добавление стилей
+offerContainer.style.cssText = `
+    max-width: 999px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+`;
+//Вставка
+sectionOffer.prepend(offerContainer);
+
+
+
+// Добавляем Offer Heading
+//Создание
+const offerHeading = document.createElement('h2');
+//Наполнение
+offerHeading.textContent = 'Food Always Available';
+//Добавление стилей
+offerHeading.style.cssText = `
+    font-family: Lato;
+    font-weight: bold;
+    font-size: 38px;
+    line-height: 46px;
+    color: #FFFFFF;
+`;
+//Вставка
+offerContainer.prepend(offerHeading);
+
+
+
+// Добавляем Offer Button
+//Создание
+const offerButton = document.createElement('button');
+//Наполнение
+offerButton.type = 'button';
+offerButton.textContent = 'Download Now';
+//Добавление стилей
+offerButton.style.cssText = `
+    width: 223px;
+    height: 62px;
+    background: #FFFFFF;
+    border-radius: 10px;
+    font-family: Lato;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    color: #1F98F0;
+`;
+//Вставка
+offerHeading.after(offerButton);
