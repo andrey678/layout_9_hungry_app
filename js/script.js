@@ -604,19 +604,150 @@ for (let feature in featuresList) {
 
 
 
-// Добавляем Features List Item
+// Добавляем Testimonials Section
 //Создание
-const featuresListItem = document.createElement('div');
+const sectionTestimonials = document.createElement('section');
 //Добавление стилей
-featuresListItem.style.cssText = `
+sectionTestimonials.style.cssText = `
+    padding: 85px 0 79px;
+`;
+//Вставка
+sectionFeatures.after(sectionTestimonials);
+
+
+
+//Добавляем Testimonials Container
+//Создание
+const testimonialsContainer = document.createElement('div');
+//Добавление стилей
+testimonialsContainer.style.cssText = `
+    max-width: 1042px;
+    margin: 0 auto;
+`;
+//Вставка
+sectionTestimonials.prepend(testimonialsContainer);
+
+
+
+// Добавляем Testimonials Heading
+//Создание
+const testimonialsHeading = document.createElement('h2');
+//Наполнение
+testimonialsHeading.textContent = 'Testimonials';
+//Добавление стилей
+testimonialsHeading.style.cssText = `
+    font-family: Lato;
+    font-weight: bold;
+    font-size: 38px;
+    line-height: 46px;
+    color: #03101A;
+    text-align: center;
+    margin-bottom: 80px;
+    
+`;
+//Вставка
+testimonialsContainer.prepend(testimonialsHeading);
+
+
+// Добавляем Testimonials Content Inner
+//Создание
+const testimonialsContentInner = document.createElement('div');
+//Добавление стилей
+testimonialsContentInner.style.cssText = `
     display: flex;
     justify-content: space-between;
+    align-items: center;
 `;
+//Вставка
+testimonialsHeading.after(testimonialsContentInner);
+
+
+// Добавляем Testimonials List
+//Создание
+const testimonialsList = {
+    'first user': {
+        image: 'img/Testimonials/left_john.png',
+        heading: 'John Smith',
+        text: '“ Food Delivery is a thriving business and there are many opportunities for this Businesses as its Growing. Food Delivery is a thriving business ”'
+    },
+    'second user': {
+        image: 'img/Testimonials/center_john.png',
+        heading: 'John Smith',
+        text: '“ Food Delivery is a thriving business and there are many opportunities for this Businesses as its Growing. Food Delivery is a thriving business ”'
+    },
+    'third user': {
+        image: 'img/Testimonials/right_john.png',
+        heading: 'John Smith',
+        text: '“ Food Delivery is a thriving business and there are many opportunities for this Businesses as its Growing. Food Delivery is a thriving business ”'
+    }
+};
+//Добавление стилей
 //Вставка
 
 
+//Разбираем объект
+for (let item in testimonialsList) {
+    // Добавляем Testimonials Item
+    //Создание
+    const testimonialsItem = document.createElement('div');
+    //Добавление стилей
+    testimonialsItem.style.maxWidth = '260px';
+    //Вставка
+    testimonialsContentInner.append(testimonialsItem);
 
-// Добавляем Features Container
+    // Добавляем Testimonials Item Image
+    //Создание
+    const testimonialsItemImage = document.createElement('img');
+    // Наполнение
+    testimonialsItemImage.src = testimonialsList[item].image;
+    //Добавление стилей
+    testimonialsItemImage.style.cssText = `
+        display:block;    
+        margin: 0 auto;    
+        margin-bottom: 20px;
+    `;
+    //Вставка
+    testimonialsItem.append(testimonialsItemImage)
+
+    // Добавляем Testimonials Item Heading
+    //Создание
+    const testimonialsItemHeading = document.createElement('h3');
+    //Наполнение
+    testimonialsItemHeading.textContent = testimonialsList[item].heading;
+    //Добавление стилей
+    testimonialsItemHeading.style.cssText = `
+        font-family: Lato;
+        font-weight: 500;
+        font-size: 21px;
+        line-height: 25px;
+        color: #03101A;
+        text-align: center;
+        margin-bottom: 20px;
+    `;
+    //Вставка
+    testimonialsItemImage.after(testimonialsItemHeading);
+
+    // Добавляем Testimonials Item Text
+    //Создание
+    const testimonialsItemText = document.createElement('p');
+    //Наполнение
+    testimonialsItemText.textContent = testimonialsList[item].text;
+    //Добавление стилей
+    testimonialsItemText.style.cssText = `
+        font-family: Lato;
+        font-size: 16px;
+        line-height: 150%;
+        text-align: center;
+        color: #03101A;
+        opacity: 0.7;
+    `;
+    //Вставка
+    testimonialsItemHeading.after(testimonialsItemText);
+}
+
+
+
+// Добавляем Testimonials Item
 //Создание
 //Добавление стилей
 //Вставка
