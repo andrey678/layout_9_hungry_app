@@ -20,8 +20,9 @@ body.prepend(sectionMain);
 const containerMain = document.createElement('div');
 //Добавление стилей
 containerMain.style.cssText = `
-    max-width: 1141px;
+    max-width: 1171px;
     margin: 0 auto;
+    padding: 0 15px;
     `;
 //Вставка
 sectionMain.prepend(containerMain);
@@ -317,8 +318,9 @@ sectionMain.after(sectionCompanies);
 const companiesContainer = document.createElement('div');
 //Добавление стилей
 companiesContainer.style.cssText = `
-    max-width: 1137px;
+    max-width: 1167px;
     margin: 0 auto;
+    padding: 0 15px;
 `;
 //Вставка
 sectionCompanies.prepend(companiesContainer);
@@ -382,7 +384,7 @@ companiesInner.prepend(...companiesHTML);
 //Создание
 const sectionFeatures = document.createElement('section');
 //Наполнение
-sectionFeatures.id = 'Feature'; 
+sectionFeatures.id = 'Feature';
 //Добавление стилей
 sectionFeatures.style.cssText = `
     padding: 92px 0 10px;
@@ -397,8 +399,9 @@ sectionCompanies.after(sectionFeatures);
 const featuresContainer = document.createElement('div');
 //Добавление стилей
 featuresContainer.style.cssText = `
-    max-width: 1200px;
+    max-width: 1230px;
     margin: 0 auto;
+    padding: 0 15px;
 `;
 //Вставка
 sectionFeatures.insertAdjacentElement('afterbegin', featuresContainer);
@@ -631,8 +634,9 @@ sectionFeatures.after(sectionTestimonials);
 const testimonialsContainer = document.createElement('div');
 //Добавление стилей
 testimonialsContainer.style.cssText = `
-    max-width: 1042px;
+    max-width: 1072px;
     margin: 0 auto;
+    padding: 0 15px;
 `;
 //Вставка
 sectionTestimonials.prepend(testimonialsContainer);
@@ -780,8 +784,9 @@ sectionTestimonials.after(sectionOffer);
 const offerContainer = document.createElement('div');
 //Добавление стилей
 offerContainer.style.cssText = `
-    max-width: 999px;
+    max-width: 1029px;
     margin: 0 auto;
+    padding: 0 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -840,7 +845,7 @@ offerHeading.after(offerButton);
 //Создание
 const sectionNews = document.createElement('section');
 //Наполнение
-sectionNews.id = 'Blog'; 
+sectionNews.id = 'Blog';
 //Добавление стилей
 sectionNews.style.cssText = `
     padding: 120px 0 128px;
@@ -853,8 +858,9 @@ sectionOffer.after(sectionNews);
 const newsContainer = document.createElement('div');
 //Добавление стилей
 newsContainer.style.cssText = `
-    max-width: 1140px;
+    max-width: 1170px;
     margin: 0 auto;
+    padding: 0 15px;
 `;
 //Вставка
 sectionNews.prepend(newsContainer);
@@ -882,7 +888,6 @@ newsContainer.prepend(newsHeading);
 const newsItemsInner = document.createElement('div');
 //Добавление стилей
 newsItemsInner.style.cssText = `
-    max-width: 1140px;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -911,11 +916,11 @@ const newsSourceList = {
 }
 
 //Разбираем объект
-for (let item in newsSourceList){
+for (let item in newsSourceList) {
     //Добавляем News Item
     //Создание 
     const newsItem = document.createElement('div');
-    //Добавляение стилей
+    //Добавление стилей
     newsItem.style.cssText = `
         max-width: 360px;
         margin-bottom: 30px;
@@ -928,7 +933,7 @@ for (let item in newsSourceList){
     const newsItemImage = document.createElement('img');
     //Наполнение
     newsItemImage.src = newsSourceList[item].image;
-    //Добавляение стилей
+    //Добавление стилей
     newsItemImage.style.marginBottom = '25px';
     //Вставка
     newsItem.append(newsItemImage);
@@ -938,7 +943,7 @@ for (let item in newsSourceList){
     const newsItemHeading = document.createElement('h3');
     //Наполнение
     newsItemHeading.textContent = newsSourceList[item].heading;
-    //Добавляение стилей
+    //Добавление стилей
     newsItemHeading.style.cssText = `
         font-family: Lato;
         font-weight: 600;
@@ -955,7 +960,7 @@ for (let item in newsSourceList){
     const newsItemDescription = document.createElement('p');
     //Наполнение
     newsItemDescription.textContent = newsSourceList[item].description;
-    //Добавляение стилей
+    //Добавление стилей
     newsItemDescription.style.cssText = `
         font-family: Lato;
         font-size: 16px;
@@ -973,7 +978,7 @@ for (let item in newsSourceList){
     // Наполнение
     newsItemLink.href = '#';
     newsItemLink.textContent = 'Read More';
-    //Добавляение стилей
+    //Добавление стилей
     newsItemLink.style.cssText = `
         font-family: Lato;
         font-weight: 600;
@@ -991,7 +996,346 @@ for (let item in newsSourceList){
 //===========================================================================
 
 
-//Добавляем News Item
-    //Создание 
-    //Добавляение стилей
+//Добавляем Footer
+//Создание
+const footer = document.createElement('footer');
+//Добавление стилей
+footer.style.cssText = `
+    padding: 100px 0;
+    background: #03101A;
+`;
+//Вставка
+sectionNews.after(footer);
+
+
+//Добавляем Footer Container
+//Создание
+const footerContainer = document.createElement('div');
+//Добавление стилей 
+footerContainer.style.cssText = `
+    max-width: 1171px;
+    margin: 0 auto;
+    padding: 0 15px;
+`;
+//Вставка
+footer.prepend(footerContainer);
+
+
+//Добавляем Footer Inner
+//Создание
+const footerInner = document.createElement('div');
+//Добавление стилей 
+footerInner.style.cssText = `
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    
+`;
+//Вставка
+footerContainer.prepend(footerInner);
+
+
+
+//Добавляем Footer Activity
+//Создание
+const footerAboutCompany = document.createElement('div');
+//Добавление стилей
+footerAboutCompany.style.cssText = `
+    max-width: 327px;
+    margin-bottom: 40px;
+`;
+//Вставка
+footerInner.prepend(footerAboutCompany);
+
+
+//Добавляем Footer Logo
+//Создание
+const footerLogo = document.createElement('a');
+//Наполнение
+footerLogo.href = '#';
+footerLogo.innerHTML = `<img src='img/Footer/footer_logo.svg' alt='Logo'>`;
+//Добавление стилей
+footerLogo.style.cssText = `
+    display: block;
+    margin-bottom: 35px;
+`;
+//Вставка
+footerAboutCompany.prepend(footerLogo);
+
+
+//Добавляем Footer Company Description
+//Создание
+const footerCompanyActivity = document.createElement('p');
+//Наполнение
+footerCompanyActivity.textContent = 'Food Delivery is a thriving business and there are many opportunities for this Businesses as its Growing.';
+//Добавление стилей 
+footerCompanyActivity.style.cssText = `
+    font-family: Lato;
+    font-size: 16px;
+    line-height: 150%;
+    color: #FFFFFF;
+    opacity: 0.7;
+`;
+//Вставка
+footerLogo.after(footerCompanyActivity);
+
+
+//Добавляем Footer Support
+//Создание
+const footerSupport = document.createElement('div');
+//Добавление стилей
+footerSupport.style.cssText = `
+    margin-bottom: 40px;
+`;
+//Вставка
+footerAboutCompany.after(footerSupport);
+
+
+//Добавляем Footer Support Heading
+//Создание
+const footerSupportHeading = document.createElement('h4');
+//Наполнение
+footerSupportHeading.textContent = 'Support';
+//Добавление стилей
+footerSupportHeading.style.cssText = `
+    font-family: Lato;
+    font-weight: 500;
+    font-size: 21px;
+    line-height: 25px;
+    color: #FFFFFF;
+    margin-bottom: 35px;
+`;
+//Вставка
+footerSupport.prepend(footerSupportHeading);
+
+
+
+//Добавляем Footer Support Link Inner
+//Создание
+const footerSupportLinkInner = document.createElement('div');
+//Добавление стилей
+//Вставка
+footerSupportHeading.after(footerSupportLinkInner);
+
+
+//Добавляем Footer Support List
+//Создание
+const footerSupportList = {
+    privacy: 'Privacy & Policy',
+    terms: 'Terms & Condition',
+    guidelines: 'Guidelines',
+    help: 'Help'
+}
+//Разбираем объект
+for (let link in footerSupportList) {
+    //Добавляем Footer Support Link
+    //Создание
+    const footerSupportLink = document.createElement('a');
+    //Наполнение
+    footerSupportLink.href = '#';
+    footerSupportLink.textContent = footerSupportList[link];
+    //Добавление стилей
+    footerSupportLink.style.cssText = `
+        display: block;
+        font-family: Lato;
+        font-size: 16px;
+        line-height: 150%;
+        color: #FFFFFF;
+        opacity: 0.7;
+        margin-bottom: 15px;
+    `;
+
     //Вставка
+    footerSupportLinkInner.append(footerSupportLink);
+}
+
+
+
+//Добавляем Footer Usefull Links
+//Создание
+const footerUsefullLinks = document.createElement('div');
+//Добавление стилей
+footerUsefullLinks.style.cssText = `
+    margin-bottom: 40px;
+`;
+//Вставка
+footerSupport.after(footerUsefullLinks);
+
+
+
+//Добавляем Footer Usefull Links Heading
+//Создание
+const footerUsefullLinksHeading = document.createElement('h4');
+//Наполнение
+footerUsefullLinksHeading.textContent = 'Usefull Links';
+//Добавление стилей
+footerUsefullLinksHeading.style.cssText = `
+    font-family: Lato;    
+    font-weight: 500;
+    font-size: 21px;
+    line-height: 25px;
+    color: #FFFFFF;
+    margin-bottom: 35px;
+
+`;
+//Вставка
+footerUsefullLinks.prepend(footerUsefullLinksHeading);
+
+
+
+
+//Добавляем Footer Usefull Links Inner
+//Создание
+const footerUsefullLinksInner = document.createElement('div');
+//Добавление стилей
+//Вставка
+footerUsefullLinksHeading.after(footerUsefullLinksInner);
+
+
+//Добавляем Footer Usefull Links List
+//Создание
+const footerUsefullLinksList = {
+    privacy: 'Privacy & Policy',
+    terms: 'Terms & Condition',
+    guidelines: 'Guidelines',
+    help: 'Help'
+}
+
+//Разбираем объект
+for (let link in footerUsefullLinksList) {
+    //Добавляем Footer Usefull Link
+    //Создание
+    const footerUsefullLink = document.createElement('a');
+    //Наполнение
+    footerUsefullLink.href = '#';
+    footerUsefullLink.textContent = footerUsefullLinksList[link];
+    //Добавление стилей
+    footerUsefullLink.style.cssText = `
+        display: block;
+        font-family: Lato;
+        font-size: 16px;
+        line-height: 150%;
+        color: #FFFFFF;
+        opacity: 0.7;
+        margin-bottom: 15px;
+    `;
+    //Вставка
+    footerUsefullLinksInner.append(footerUsefullLink);
+}
+
+
+//Добавляем Footer Newsletter
+//Создание
+const footerNewsletter = document.createElement('div');
+//Добавление стилей
+//Вставка
+footerUsefullLinks.after(footerNewsletter);
+
+
+
+//Добавляем Footer Newsletter Heading
+//Создание
+const footerNewsletterHeading = document.createElement('h4');
+//Наполнение
+footerNewsletterHeading.textContent = 'News Letter'
+//Добавление стилей
+footerNewsletterHeading.style.cssText = `
+    font-family: Lato;
+    font-weight: 500;
+    font-size: 21px;
+    line-height: 25px;
+    color: #FFFFFF;
+    margin-bottom: 25px;
+`;
+//Вставка
+footerNewsletter.prepend(footerNewsletterHeading);
+
+
+//Добавляем Footer Newsletter Form
+//Создание
+const footerNewsletterForm = document.createElement('form');
+//Наполнение
+footerNewsletterForm.action = `#`;
+//Добавление стилей
+footerNewsletterForm.style.cssText = `
+    margin-bottom: 32px;
+`;
+//Вставка
+footerNewsletterHeading.after(footerNewsletterForm);
+
+
+//Добавляем Footer Form Input
+//Создание
+const footerFormInput = document.createElement('input');
+//Наполнение
+footerFormInput.type = 'email';
+footerFormInput.required = true;
+footerFormInput.placeholder = 'Email';
+//Добавление стилей
+footerFormInput.style.cssText = `
+    max-width: 229px;
+    height: 41px;
+    background: #FFFFFF;
+    padding: 10px;
+    font-family: Lato;
+    font-size: 14px;
+    line-height: 150%;
+    color: rgba(3, 16, 26, 0.7);
+    
+`;
+//Вставка
+footerNewsletterForm.prepend(footerFormInput);
+
+
+//Добавляем Footer Form Button
+//Создание
+const footerFormButton = document.createElement('button');
+//Наполнение
+footerFormButton.type = 'submit';
+footerFormButton.textContent = 'Subscribe';
+//Добавление стилей
+footerFormButton.style.cssText = `
+    padding: 10px 35px;
+    background: #1F98F0;
+    font-family: Lato;
+    font-size: 14px;
+    line-height: 150%;
+    color: #FFFFFF;
+`;
+//Вставка
+footerFormInput.after(footerFormButton);
+
+// Добавляем Footer Newsletter Links Inner
+// Создание
+const footerNewsletterLinksInner = document.createElement('div');
+// Вставка
+footerNewsletterForm.after(footerNewsletterLinksInner);
+
+// Добавляем Footer Newsletter Links List
+//Создание
+const footerNewsletterLinksList = {
+    guidelines: 'Guidelines',
+    help: 'Help'
+}
+
+//Разбираем объект
+for(let item in footerNewsletterLinksList){
+    //Добавляем Footer Newsletter Link
+    //Создание
+    const footerNewsletterLink = document.createElement('a');
+    //Наполнение
+    footerNewsletterLink.href = '#';
+    footerNewsletterLink.textContent = footerNewsletterLinksList[item];
+    //Добавление стилей
+    footerNewsletterLink.style.cssText = `
+        display: block;
+        font-family: Lato;
+        font-size: 16px;
+        line-height: 150%;
+        color: #FFFFFF;
+        opacity: 0.7;
+        margin-bottom: 15px;
+    `;
+    //Вставка
+    footerNewsletterLinksInner.append(footerNewsletterLink);
+}
